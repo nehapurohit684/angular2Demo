@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.cities = [];
-    this.initZipcodes = [94016, 10001, 60642];
+    this.initZipcodes = [43082, 43215, 60642];
     this.getInitCityWeather();
   }
 
