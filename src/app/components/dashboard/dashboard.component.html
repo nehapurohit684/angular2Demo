@@ -1,0 +1,38 @@
+<div class="container-fluid margin-top-s">
+    <div class="card-deck justify-content-md-center">
+      <div *ngFor="let city of cityList; index as i" class=".col-lg-3 .col-md-4 .col-sm-12"  style="width: 18rem;" routerLink="/detail/{{city.zip}}"> 
+          <div class="card text-center">
+              <div class="card-body">
+                  <h5 class="card-title">{{city.name | uppercase}}</h5>
+                  <img src="assets/images/{{city.icon | lowercase }}.png" alt="{{city.icon}}">
+                  <h1 *ngIf="unit === 'C'">{{city.tempC}}&deg;C</h1>
+                  <h1 *ngIf="unit === 'F'">{{city.tempF}}&deg;F</h1>
+                  <div>{{city.forecast}}</div>
+                  <hr>
+                  <div class="row position-relative margin-top-s">
+                      <div class="low-temp">
+                          <div *ngIf="unit === 'C'">{{city.tempLowC}}&deg;C</div>
+                          <div *ngIf="unit === 'F'">{{city.tempLowF}}&deg;F</div>
+                          <div>Low</div>
+                      </div>
+                      <div class="high-temp">
+                          <div *ngIf="unit === 'C'">{{city.tempHighC}}&deg;C</div>
+                          <div *ngIf="unit === 'F'">{{city.tempHighF}}&deg;F</div>
+                          <div>High</div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  
+      <div class=".col-lg-3 .col-md-4 .col-sm-12"  style="width: 18rem;">
+          <div class="card text-center add-city">
+              <div class="card-body">
+                  <h5 class="card-title">ADD CITY</h5>
+                  <img src="assets/images/plus.svg" id="plus-icon" alt="plus">
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">FirstAngularApp</a>
+
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary" [ngClass]="{'active': !isUsingF}">
+        <input type="radio" name="celsius" id="option1" autocomplete="off" (click)="selectCelsius()"> Celsius
+      </label>
+      <label class="btn btn-secondary" [ngClass]="{'active': isUsingF}">
+        <input type="radio" name="fahrenheit" id="option2" autocomplete="off" (click)="selectFahrenheit()"> Fahrenheit
+      </label>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
